@@ -21,6 +21,7 @@ if ($_POST) {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -49,45 +50,48 @@ if ($_POST) {
         .login-logo {
             display: block;
             margin: 30 auto 30px;
-            height: 80px; /* Atur tinggi gambar sesuai kebutuhan */
-            width: 180px
-            align:max-content;
+            height: 80px;
+            /* Atur tinggi gambar sesuai kebutuhan */
+            width: 180px align:max-content;
         }
-        
     </style>
 </head>
+
 <body style="background:rgb(45, 110, 222)  url(images/back2.jpeg) left bottom fixed;">
 
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-xs-12 col-sm-6 col-md-4">
-            <div class="panel panel-default login-container">
-                <div class="panel-body">
-                    <div class="text-center">
-                        <!-- Gambar di atas form -->
-                        <img src="images/logodg.jpeg" class="login-logo" alt="logo-img">
-                        <h3><b>Login</b></h3>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <div class="panel panel-default login-container">
+                    <div class="panel-body">
+                        <div class="text-center">
+                            <!-- Gambar di atas form -->
+                            <img src="images/logodg.jpeg" class="login-logo" alt="logo-img">
+                            <h3><b>Login</b></h3>
+                        </div>
+                        <form method="post">
+                            <div class="form-group">
+                                <label for="InputUsername1">Username</label>
+                                <input type="text" class="form-control" name="username" id="InputUsername1"
+                                    placeholder="Username" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="InputPassword1">Password</label>
+                                <input type="password" class="form-control" name="password" id="InputPassword1"
+                                    placeholder="Password" required>
+                            </div>
+                            <p><small style="color:#999;">Masukkan email & Password Anda</small></p>
+                            <button type="submit" class="btn btn-primary btn-block">Login</button>
+                        </form>
                     </div>
-                    <form method="post">
-                        <div class="form-group">
-                            <label for="InputUsername1">Username</label>
-                            <input type="text" class="form-control" name="username" id="InputUsername1" placeholder="Username" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="InputPassword1">Password</label>
-                            <input type="password" class="form-control" name="password" id="InputPassword1" placeholder="Password" required>
-                        </div>
-                        <p><small style="color:#999;">Masukkan email & Password Anda</small></p>
-                        <button type="submit" class="btn btn-primary btn-block">Login</button>
-                    </form>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="js/jquery-1.11.3.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
 </body>
+
 </html>

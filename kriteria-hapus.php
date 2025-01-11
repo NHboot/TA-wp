@@ -7,11 +7,11 @@ include_once 'includes/kriteria.inc.php';
 $pro = new Kriteria($db);
 $id = isset($_GET['id']) ? $_GET['id'] : die('ERROR: missing ID.');
 $pro->id = $id;
-	
-if($pro->delete()){
+
+if ($pro->delete()) {
 	echo "<script>location.href='kriteria.php';</script>";
-} else{
+} else {
 	echo "<script>alert('Gagal Hapus Data');location.href='kriteria.php';</script>";
-		
+
 }
 ?>
