@@ -50,14 +50,15 @@ $db = $config->getConnection();
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
-					<li><a href="nilai.php">Nilai</a></li>
-					<li><a href="kriteria.php">Kriteria</a></li>
-					<li><a href="bobot.php">Bobot</a></li>
-					<li><a href="alternatif.php">Alternatif</a></li>
-					<li><a href="rangking.php">Rangking</a></li>
+					<li><a href="index.php">HOME</a></li>
+					<li><a href="nilai.php">NILAI</a></li>
+					<li><a href="kriteria.php">KRITERIA</a></li>
+					<li><a href="bobot.php">BOBOT</a></li>
+					<li><a href="alternatif.php">ALTERNATIF</a></li>
+					<li><a href="rangking.php">RANGKING</a></li>
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-							aria-expanded="false">Laporan <span class="caret"></span></a>
+							aria-expanded="false" style="background-color:#d9534f; border-color:#d9534f">Laporan <span class="caret"></span></a>
 						<ul class="dropdown-menu">
 							<li><a href="laporan.php">Laporan Perankingan</a></li>
 							<li><a onclick="window.open('includes/LaporanNilai.php', '_blank')">Laporan Nilai</a></li>
@@ -72,7 +73,7 @@ $db = $config->getConnection();
 					<li><a href="profil.php"><?php echo $_SESSION['nama_lengkap'] ?></a></li>
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-							aria-expanded="false"><span class="glyphicon glyphicon-cog"></span> <span
+							aria-expanded="false" style="background-color:#d9534f; border-color:#d9534f"><span class="glyphicon glyphicon-cog"></span> <span
 								class="caret"></span></a>
 						<ul class="dropdown-menu">
 							<li><a href="profil.php">Profil</a></li>

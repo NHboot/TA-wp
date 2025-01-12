@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 15, 2024 at 07:31 PM
+-- Generation Time: Jan 12, 2025 at 07:24 AM
 -- Server version: 10.4.28-MariaDB
--- PHP Version: 8.1.17
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `dieselgarage`
+-- Database: `dggarage`
 --
 
 -- --------------------------------------------------------
@@ -34,6 +34,17 @@ CREATE TABLE `wp_alternatif` (
   `vektor_v` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
+--
+-- Dumping data for table `wp_alternatif`
+--
+
+INSERT INTO `wp_alternatif` (`id_alternatif`, `nama_alternatif`, `vektor_s`, `vektor_v`) VALUES
+(1, 'Oli Fuchs 15W-40 Titan Truck Plus', 0.913526177912, 0.20941864390928),
+(2, 'Oli Castrol Magnetec 10W-30', 0.93509293655988, 0.21436265258551),
+(3, 'Oli Total Quartz 9000 5W-40', 0.86982444024969, 0.19940036653639),
+(4, 'Oli Top 1 HP SPORT SAE 15W-40', 0.75612882153601, 0.17333654607329),
+(5, 'Oli Shell Helix HX7 10W-40', 0.88762843289159, 0.20348179089553);
+
 -- --------------------------------------------------------
 
 --
@@ -45,6 +56,17 @@ CREATE TABLE `wp_bobot` (
   `nilai_bobot` double NOT NULL,
   `hasil_bobot` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Dumping data for table `wp_bobot`
+--
+
+INSERT INTO `wp_bobot` (`id_kriteria`, `nilai_bobot`, `hasil_bobot`) VALUES
+(1, 15, 0.15),
+(2, 20, 0.2),
+(3, 30, 0.3),
+(4, 20, 0.2),
+(5, 15, 0.15);
 
 -- --------------------------------------------------------
 
@@ -58,6 +80,17 @@ CREATE TABLE `wp_kriteria` (
   `tipe_kriteria` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
+--
+-- Dumping data for table `wp_kriteria`
+--
+
+INSERT INTO `wp_kriteria` (`id_kriteria`, `nama_kriteria`, `tipe_kriteria`) VALUES
+(1, 'Harga', 'cost'),
+(2, 'Brand', 'benefit'),
+(3, 'Kualitas Barang', 'benefit'),
+(4, 'Life Time', 'benefit'),
+(5, 'Tipe', 'cost');
+
 -- --------------------------------------------------------
 
 --
@@ -69,6 +102,17 @@ CREATE TABLE `wp_nilai` (
   `ket_nilai` varchar(45) NOT NULL,
   `jum_nilai` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Dumping data for table `wp_nilai`
+--
+
+INSERT INTO `wp_nilai` (`id_nilai`, `ket_nilai`, `jum_nilai`) VALUES
+(1, 'Sangat Baik', 5),
+(2, 'Baik', 4),
+(3, 'Cukup', 3),
+(4, 'Buruk', 2),
+(5, 'Sangat Buruk', 1);
 
 -- --------------------------------------------------------
 
@@ -102,6 +146,37 @@ CREATE TABLE `wp_rangking` (
   `nilai_rangking` double NOT NULL,
   `nilai_normalisasi` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Dumping data for table `wp_rangking`
+--
+
+INSERT INTO `wp_rangking` (`id_alternatif`, `id_kriteria`, `nilai_rangking`, `nilai_normalisasi`) VALUES
+(1, 1, 0.5, 1.1095694720678),
+(1, 2, 0.4, 0.83255320740187),
+(1, 3, 1, 1),
+(1, 4, 0.8, 0.95635249979004),
+(1, 5, 0.8, 1.0340380070342),
+(2, 1, 0.7, 1.0549583015933),
+(2, 2, 0.7, 0.93114991509484),
+(2, 3, 0.6, 0.85791720044409),
+(2, 4, 1, 1),
+(2, 5, 0.5, 1.1095694720678),
+(3, 1, 0.4, 1.147337005563),
+(3, 2, 0.5, 0.87055056329612),
+(3, 3, 0.8, 0.93524844782262),
+(3, 4, 0.7, 0.93114991509484),
+(3, 5, 1, 1),
+(4, 1, 0.8, 1.0340380070342),
+(4, 2, 0.8, 0.95635249979004),
+(4, 3, 1, 1),
+(4, 4, 0.2, 0.7247796636777),
+(4, 5, 0.7, 1.0549583015933),
+(5, 1, 0.7, 1.0549583015933),
+(5, 2, 0.8, 0.95635249979004),
+(5, 3, 0.7, 0.89852344179064),
+(5, 4, 0.9, 0.97914836236098),
+(5, 5, 1, 1);
 
 --
 -- Indexes for dumped tables
@@ -152,19 +227,19 @@ ALTER TABLE `wp_rangking`
 -- AUTO_INCREMENT for table `wp_alternatif`
 --
 ALTER TABLE `wp_alternatif`
-  MODIFY `id_alternatif` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_alternatif` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `wp_kriteria`
 --
 ALTER TABLE `wp_kriteria`
-  MODIFY `id_kriteria` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_kriteria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `wp_nilai`
 --
 ALTER TABLE `wp_nilai`
-  MODIFY `id_nilai` int(6) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_nilai` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `wp_pengguna`

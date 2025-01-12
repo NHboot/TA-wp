@@ -121,7 +121,7 @@ $stmt5 = $pro5->readAll();
 	</div>
 </div>
 
-<footer class="text-center">&copy; 2015</footer>
+<footer class="text-center">&copy; 2025</footer>
 </div>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -139,10 +139,10 @@ $stmt5 = $pro5->readAll();
 				type: 'column'
 			},
 			title: {
-				text: 'Grafik Perangkingan '
+				text: 'Grafik Hasil Perangkingan '
 			},
 			xAxis: {
-				categories: ['Alternatif']
+				categories: ['Alternatif / Barang']
 			},
 			yAxis: {
 				title: {

@@ -57,7 +57,7 @@ if ($_POST) {
     </style>
 </head>
 
-<body style="background:rgb(45, 110, 222)  url(images/back2.jpeg) left bottom fixed;">
+<body style="background:rgb(0, 0, 0)  url(images/pexels-geralt-21694.jpg) left bottom fixed;">
 
     <div class="container">
         <div class="row justify-content-center">

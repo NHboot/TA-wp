@@ -45,7 +45,7 @@ if(isset($_POST['hapus-contengan'])){
 		<div class="col-md-6 text-right">
             <button type="submit" name="hapus-contengan" class="btn btn-danger">Hapus Contengan</button>
 			<button type="button" onclick="location.href='nilai-baru.php'" class="btn btn-primary">Tambah Data</button>
-            <button type="button" onclick="window.open('includes/LaporanNilai.php', '_blank')" class="btn btn-primary">Cetak PDF</button>
+
 		</div>
 	</div>
 	<br/>

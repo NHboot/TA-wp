@@ -41,7 +41,10 @@ $stmt = $pro->readAll();
             margin-top: 20px;
         }
         .kop img {
-            max-width: 100px;
+            max-width: 250px;
+            height: 80px;
+            width: 180px align:max-content;
+            margin: 40 auto 50px;
         }
         .kop h3, .kop p {
             margin: 0;
@@ -92,9 +95,9 @@ $stmt = $pro->readAll();
 
 <div class="kop">
     <!-- Ganti dengan logo dan informasi perusahaan -->
-    <img src="logo-perusahaan.png" alt="Logo Perusahaan">
-    <h3>Nama Perusahaan</h3>
-    <p class="alamat">Alamat Perusahaan, Kota, Provinsi</p>
+    <img src="/GARAGE/images/logodg.jpeg" alt="Logo Perusahaan" width="400" height="200">
+    <h3>PT. Diesel One Garage</h3>
+    <p class="alamat">Jl. Pecenongan No.3, RT.1/RW.4, Kb. Klp., Kecamatan Gambir, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10120 </p>
 </div>
 
 <div class="garis"></div>
@@ -143,9 +146,9 @@ $stmt = $pro->readAll();
         // Menampilkan tanggal dalam format Indonesia
         echo 'Jakarta, ' . $tanggal . ' ' . $bulan . ' ' . $tahun;
         ?>
-        <p>Manager</p>
+        <p>Head Purchasing</p>
         <br><br>
-        <p>Nama Atasan Perusahaan</p>
+        <p>Rudi</p>
     </div>
 </div>
 

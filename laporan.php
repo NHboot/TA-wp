@@ -54,6 +54,7 @@ include "header.php"
 							data-toggle="tab">Laporan Perangkingan</a></li>
 					<li role="presentation" style="cursor: pointer;"><a id="cetak" role="tab">Cetak Laporan
 							Perankingan</a></li>
+							<li role="presentation" style="cursor: pointer;"><a href="index.php" cetak" role="tab">Hasil Perangkingan</a></li>
 				</ul>
 			</form>
 			<!-- Tab panes -->
@@ -234,10 +235,32 @@ include "header.php"
 	<script src="js/jquery-printme.js"></script>
 	<script>
 		$('#cetak').click(function () {
+    // Tambahkan logo di atas laporan
+    $("#rangking").prepend(`
+        <div class="text-center" style="margin-bottom: 20px;">
+            <img src="images/logodg.jpeg" alt="Logo" style="max-height: 100px;">
+           
+        </div>
+    `);
+	   // Tambahkan kolom untuk nama manajer dan tanda tangan
+		$("#rangking").append(`
+        <div style="margin-top: 30px; text-align: left;">
+            <div style="float: right; width: 30%; text-align: center;">
+                <p>Dept Head Purchasing</p>
+                <br><br><br>
+                <p>(Rudi)</p>
+            </div>
+            <div style="clear: both;"></div>
+        </div>
+    `);
 
-			$("#rangking").printMe({ "path": "css/bootstrap.min.css", "title": "LAPORAN HASIL AKHIR" });
+    
+    $("#rangking").printMe({ 
+        "path": "css/bootstrap.min.css", 
+        "title": "LAPORAN HASIL AKHIR PERANGKINGAN" 
+    });
+});
 
-		});
 	</script>
 	<script type="text/javascript" src="js/tableExport.js"></script>
 	<script type="text/javascript" src="js/jquery.base64.js"></script>
