@@ -24,7 +24,6 @@ include "header.php"
 </head>
 
 <body>
-
 	<div id="container" class="container">
 		<?php
 		include_once 'includes/alternatif.inc.php';
@@ -32,6 +31,7 @@ include "header.php"
 		$stmt1 = $pro1->readAll();
 		$stmt1x = $pro1->readAll();
 		$stmt1y = $pro1->readAll();
+		$stmtranking = $pro1->rankingData();
 		include_once 'includes/bobot.inc.php';
 		$pro2 = new Bobot($db);
 		$stmt2 = $pro2->readAll();
@@ -60,6 +60,26 @@ include "header.php"
 			<div class="tab-content">
 				<div role="tabpanel" class="tab-pane active" id="rangking">
 					<br />
+					<h4>Hasil Akhir Perankingan</h4>
+					<table width="100%" class="table table-striped table-bordered">
+						<thead>
+							<tr>
+								<th style="vertical-align: middle" class="text-center">Nama Alternatif</th>
+								<th style="vertical-align: middle" class="text-center">Nilai Akhir (V)</th>
+							</tr>
+						</thead>
+
+						<tbody>
+							<?php while ($row1 = $stmtranking->fetch(PDO::FETCH_ASSOC)) { ?>
+								<tr>
+									<td><?php echo $row1['nama_alternatif'] ?></td>
+									<td><?php echo $row1['vektor_v'] ?></td>
+								</tr>
+							<?php } ?>
+						</tbody>
+					</table>
+					
+
 					<h4>Nilai Alternatif Kriteria</h4>
 					<table width="100%" class="table table-striped table-bordered">
 						<thead>
