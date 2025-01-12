@@ -64,21 +64,25 @@ include "header.php"
 					<table width="100%" class="table table-striped table-bordered">
 						<thead>
 							<tr>
+								<th style="vertical-align: middle" class="text-center">Ranking</th>
 								<th style="vertical-align: middle" class="text-center">Nama Alternatif</th>
 								<th style="vertical-align: middle" class="text-center">Nilai Akhir (V)</th>
 							</tr>
 						</thead>
 
 						<tbody>
-							<?php while ($row1 = $stmtranking->fetch(PDO::FETCH_ASSOC)) { ?>
+							<?php 
+							$no = 1;
+							while ($row1 = $stmtranking->fetch(PDO::FETCH_ASSOC)) { ?>
 								<tr>
+								<td><?php echo $no++; ?></td>
 									<td><?php echo $row1['nama_alternatif'] ?></td>
 									<td><?php echo $row1['vektor_v'] ?></td>
 								</tr>
 							<?php } ?>
 						</tbody>
 					</table>
-					
+
 
 					<h4>Nilai Alternatif Kriteria</h4>
 					<table width="100%" class="table table-striped table-bordered">
