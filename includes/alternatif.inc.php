@@ -10,6 +10,14 @@ class Alternatif{
 	public function __construct($db){
 		$this->conn = $db;
 	}
+
+	function rankingData(){
+		$query = "SELECT nama_alternatif, vektor_v FROM ".$this->table_name." ORDER BY vektor_v DESC";
+		$stmtranking = $this->conn->prepare($query);
+		$stmtranking->execute();
+	
+		return $stmtranking;
+	}
 	
 	function insert(){
 		
